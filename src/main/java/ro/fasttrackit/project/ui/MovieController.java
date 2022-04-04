@@ -20,7 +20,7 @@ public class MovieController {
     String getMoviePage(Model model, @RequestParam(required = false) Integer showMovie) {
         model.addAttribute("message", "Hello Thymeleaf");
         model.addAttribute("user", new User(1, "Ana", 22));
-        model.addAttribute("movie", service.getAll());
+        model.addAttribute("movies", service.getAll());
         if (showMovie != null) {
             model.addAttribute("movieDetails", service.getMovie(showMovie)
                     .orElse(null));
