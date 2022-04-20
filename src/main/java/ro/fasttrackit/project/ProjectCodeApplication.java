@@ -14,21 +14,23 @@ import static ro.fasttrackit.project.model.MovieType.ACTION;
 @SpringBootApplication
 public class ProjectCodeApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProjectCodeApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProjectCodeApplication.class, args);
+    }
 
-	@Bean
-	CommandLineRunner atStartup(MovieRepository repo){
-		return args -> {
-			repo.saveAll(List.of(
-					new Movie("The Wolf", 25),
-					new Movie("Spiderman", 71),
-					new Movie("Batman", 33),
-					new Movie("Morbius", 150),
-					new Movie("The lost city", 17)));
-			System.out.println(repo.byIdAndNameCustom(2,"%are%"));
-			System.out.println(repo.byTypeCustom(ACTION));
-		};
-	}
+    @Bean
+    CommandLineRunner atStartup(MovieRepository repo) {
+        return args -> {
+            repo.saveAll(List.of(
+                    new Movie("Venom", 75),
+                    new Movie("Wanted", 35),
+                    new Movie("Jaf cu stil", 51),
+                    new Movie("Dictatorul", 29),
+                    new Movie("Batman", 33),
+                    new Movie("Morbius", 68),
+                    new Movie("The lost city", 29)));
+            System.out.println(repo.byIdAndNameCustom(2, "%are%"));
+            System.out.println(repo.byTypeCustom(ACTION));
+        };
+    }
 }
