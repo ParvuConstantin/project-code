@@ -40,7 +40,7 @@
             <td data-th-id="${movie.id}">
                 <i class="fa fa-trash delete-icon"></i>
                 <i class="fa fa-pencil-alt edit-icon" data-bs-target="#add-edit-movie" data-bs-toggle="modal"></i>
-                <a data-th-href="'/movie?showMovie='+${movie.id}">
+                <a data-th-href="'/movies?showMovie='+${movie.id}">
                     <i class="fa fa-arrow-alt-circle-down"></i>
                 </a>
             </td>
@@ -60,7 +60,6 @@
         <div class="card-footer" data-th-text="${movieDetails.rezervation}"></div>
     </div>
 </div>
-
 <div class="modal" id="add-edit-movie">
     <div class="modal-dialog">
         <div class="modal-content">
